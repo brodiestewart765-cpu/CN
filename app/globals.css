@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #f7f8fa;
+  color: #101828;
+  font-feature-settings: "cv11", "ss01";
+  font-variant-numeric: tabular-nums;
+}
+
+/* Thin custom scrollbars to match the SaaS aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e4e7ec;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d0d5dd;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-line rounded-xl shadow-card;
+  }
+  .kpi-label {
+    @apply text-xs font-medium text-ink-500;
+  }
+  .kpi-value {
+    @apply text-2xl font-semibold text-ink-900 tracking-tight;
+  }
+  .page-title {
+    @apply text-xl font-semibold text-ink-900 tracking-tight;
+  }
+  .nav-link {
+    @apply flex items-center gap-3 h-9 px-3 rounded-lg text-sm font-medium text-ink-600 transition-colors;
+  }
+  .nav-link:hover {
+    @apply bg-surface text-ink-800;
+  }
+  .nav-link-active {
+    @apply bg-primary-50 text-primary-700;
+  }
+}
