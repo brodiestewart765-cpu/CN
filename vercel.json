@@ -1,0 +1,5 @@
+{
+  "framework": "nextjs",
+  "installCommand": "(unzip -o genies-crm.zip -d __x || python3 -c \"import zipfile; zipfile.ZipFile('genies-crm.zip').extractall('__x')\") && cp -rf __x/genies-crm/. ./ && npm install",
+  "buildCommand": "npm run build"
+}
