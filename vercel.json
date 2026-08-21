@@ -1,5 +1,5 @@
 {
   "framework": "nextjs",
-  "installCommand": "(unzip -o genies-crm.zip -d __x || python3 -c \"import zipfile; zipfile.ZipFile('genies-crm.zip').extractall('__x')\") && cp -rf __x/genies-crm/. ./ && npm install",
+  "installCommand": "for z in geniescrm.zip genies-crm.zip; do if [ -f \"$z\" ]; then (unzip -o \"$z\" -d __x || python3 -c \"import zipfile; zipfile.ZipFile('$z').extractall('__x')\"); break; fi; done && cp -rf __x/genies-crm/. ./ && npm install",
   "buildCommand": "npm run build"
 }
